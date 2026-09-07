@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para você, Pi 💌</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:22px;overflow:hidden;font-family:Georgia,serif;color:#fff;background:radial-gradient(circle at 50% 15%,#492d57,#19121f 55%,#0b080e)}
+.card{width:min(92vw,520px);padding:42px 27px;border:1px solid #ffffff28;border-radius:28px;background:#17101fc7;backdrop-filter:blur(14px);box-shadow:0 25px 80px #0009;text-align:center}
+.small{font:12px Arial,sans-serif;letter-spacing:3px;text-transform:uppercase;opacity:.62;margin-bottom:18px}
+h1{font-size:clamp(40px,11vw,62px);font-weight:400;margin:0 0 18px}
+p{font-size:18px;line-height:1.7;opacity:.88}
+button{margin-top:25px;padding:15px 27px;border:0;border-radius:999px;background:#f3d4e5;color:#29172a;font:17px Georgia,serif;cursor:pointer;transition:.2s}
+button:hover{transform:translateY(-2px) scale(1.02)}
+.hidden{display:none}
+.message{text-align:left;font-size:18px;line-height:1.85;white-space:pre-line}
+.heart{font-size:45px;display:block;animation:pulse 1.5s infinite}
+@keyframes pulse{50%{transform:scale(1.12)}}
+.signature{text-align:right;margin-top:24px;font-style:italic}
+.secondary{background:transparent;color:white;border:1px solid #ffffff30;font-size:14px}
+.star{position:fixed;width:3px;height:3px;background:white;border-radius:50%;opacity:.5;animation:twinkle 2.5s infinite}
+@keyframes twinkle{50%{opacity:1;transform:scale(1.5)}}
+.footer{position:fixed;bottom:12px;font:11px Arial,sans-serif;opacity:.3}
+</style>
+</head>
+<body>
+<div id="stars"></div>
+
+<section class="card" id="inicio">
+<div class="small">uma mensagem só para você</div>
+<h1>Oi, Pi. 👀</h1>
+<p>Eu poderia simplesmente te mandar uma mensagem...<br>mas achei mais divertido fazer você clicar em um link.</p>
+<button onclick="abrir()">Tem uma coisa aqui 💌</button>
+</section>
+
+<section class="card hidden" id="msg">
+<span class="heart">♡</span>
+<div class="small">agora você já clicou...</div>
+<div class="message">Oi, Pi.
+
+Se você chegou até aqui, parabéns:
+a curiosidade venceu. 😂
+
+Eu fiz esse cantinho só porque queria te deixar
+uma mensagem de um jeito um pouquinho diferente.
+
+Às vezes a gente não precisa de um motivo enorme
+para lembrar de alguém.
+
+Então fica aqui, simplesmente:
+
+você é uma pessoa especial para mim. ❤️
+
+E sim...
+eu fiz um site inteiro só para você clicar nesse botão.
+
+Agora pode fingir que não achou fofo. Eu deixo. 👀</div>
+<div class="signature">— Estella</div>
+<button class="secondary" onclick="voltar()">Voltar ao começo</button>
+</section>
+
+<div class="footer">feito com carinho ✦</div>
+
+<script>
+for(let i=0;i<55;i++){
+ let s=document.createElement('span');
+ s.className='star';
+ s.style.left=Math.random()*100+'vw';
+ s.style.top=Math.random()*100+'vh';
+ s.style.animationDelay=Math.random()*2.5+'s';
+ document.getElementById('stars').appendChild(s);
+}
+function abrir(){
+ document.getElementById('inicio').classList.add('hidden');
+ document.getElementById('msg').classList.remove('hidden');
+}
+function voltar(){
+ document.getElementById('msg').classList.add('hidden');
+ document.getElementById('inicio').classList.remove('hidden');
+}
+</script>
+</body>
+</html>
